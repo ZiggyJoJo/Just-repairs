@@ -134,8 +134,8 @@ AddEventHandler('just_repairs:success', function ()
                 if Config.UseMythicNotify == true then 
                     TriggerEvent('mythic_notify:client:SendAlert', {type = 'inform', text = 'Your vehicle has been fixed! Maybe you should take some driving lessons...', length = 2500})
                 else
-                    -- ESX.ShowNotification('Your vehicle has been fixed! Maybe you should take some driving lessons...')
-                    TriggerEvent("swt_notifications:Icon", 'Your vehicle has been fixed! Maybe you should take some driving lessons...',"top-right",4000,"green-8","white",true,"mdi-car-wash")
+                    ESX.ShowNotification('Your vehicle has been fixed! Maybe you should take some driving lessons...')
+                    -- TriggerEvent("swt_notifications:Icon", 'Your vehicle has been fixed! Maybe you should take some driving lessons...',"top-right",4000,"green-8","white",true,"mdi-car-wash")
                 end
                 uiVisible = false
             end
@@ -159,8 +159,8 @@ AddEventHandler('just_repairs:success', function ()
                     if Config.UseMythicNotify == true then 
                         TriggerEvent('mythic_notify:client:SendAlert', {type = 'inform', text = 'Your vehicle has been fixed! Maybe you should take some driving lessons...', length = 2500})
                     else
-                        -- ESX.ShowNotification('Your vehicle has been fixed! Maybe you should take some driving lessons...')
-                        TriggerEvent("swt_notifications:Icon", 'Your vehicle has been fixed! Maybe you should take some driving lessons...',"top-right",4000,"green-8","white",true,"mdi-car-wash")
+                        ESX.ShowNotification('Your vehicle has been fixed! Maybe you should take some driving lessons...')
+                        -- TriggerEvent("swt_notifications:Icon", 'Your vehicle has been fixed! Maybe you should take some driving lessons...',"top-right",4000,"green-8","white",true,"mdi-car-wash")
                     end
                     uiVisible = false
                     timer2 = false
@@ -182,8 +182,8 @@ AddEventHandler('just_repairs:notenoughmoney', function (moneyleft)
     if Config.UseMythicNotify == true then 
         TriggerEvent('mythic_notify:client:SendAlert', {type = 'error', text = "You don't have enough money! You need: $" .. moneyleft .." more.", length = 2500})
     else
-        -- ESX.ShowNotification("You don't have enough money! You need: $" .. moneyleft .." more.")
-    	TriggerEvent("swt_notifications:Icon", "You don't have enough money! You need: $" .. moneyleft .." more.","top-right",5000,"red","white",true,"mdi-alert-circle-outline")
+        ESX.ShowNotification("You don't have enough money! You need: $" .. moneyleft .." more.")
+    	-- TriggerEvent("swt_notifications:Icon", "You don't have enough money! You need: $" .. moneyleft .." more.","top-right",5000,"red","white",true,"mdi-alert-circle-outline")
     end
 end)
 
