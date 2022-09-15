@@ -1,5 +1,3 @@
-Key = 38 -- E
-
 local inRepairShop = false
 local uiVisible = false
 local repairing = false
@@ -56,15 +54,15 @@ AddEventHandler('just_repairs:enteredRepair', function (price)
                     local engineHealth = GetVehicleEngineHealth(veh)
                     repairCost = math.ceil((((1000 - bodyHealth) + (1000 - engineHealth)) * Config.CostFactor) * Config.ClassRepairMultiplier[vehClass])
                     if uiVisible == false and repairCost > 0 then
-                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "[E] Fix Vehicle for $".. repairCost .."")
+                        lib.showTextUI("[E] Fix Vehicle for $".. repairCost, {icon = "fa-solid fa-screwdriver-wrench"})
                         uiVisible = true
                     elseif uiVisible == false and repairCost == 0 then
                         uiVisible = true
                         repairing = false
-                        TriggerEvent('cd_drawtextui:ShowUI', 'show', "Nothing to repair")
+                        lib.showTextUI("Nothing to repair")
                     end
                     if repairCost > 0 then 
-                        if IsControlJustPressed(1, Key) and repairing == false then
+                        if IsControlJustPressed(1, 38) and repairing == false then
                             check = true
                             repairing = true
                             TriggerServerEvent('just_repairs:checkmoney',repairCost)
@@ -78,7 +76,7 @@ AddEventHandler('just_repairs:enteredRepair', function (price)
             else 
                 repairing = false
                 uiVisible = false
-                TriggerEvent('cd_drawtextui:HideUI')
+                lib.hideTextUI()
                 check = false
             end
 		end
@@ -103,7 +101,7 @@ AddEventHandler('bt-polyzone:exit', function(name)
             inRepairShop = false
             Citizen.Wait(100)
             uiVisible = false
-            TriggerEvent('cd_drawtextui:HideUI')
+            lib.hideTextUI()
             break
         end
     end
