@@ -1,9 +1,5 @@
 Config = {}
 
-Config.UseMythicProgbar = true -- Enable or dissable using mythic progressbar
-
-Config.UseMythicNotify = false -- Enable or dissable using mythic notify
-
 Config.RepairTime = 5  -- Seconds
 
 Config.CostFactor = 0.5  -- Determines overall cost of all repairs less than 1 = cheeper more than 1 = higher price
